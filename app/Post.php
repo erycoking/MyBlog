@@ -8,4 +8,9 @@ class Post extends Model
 {
     // Table name
     protected $table = 'posts';
+
+    public function user()
+    {
+        return $this->belongsTo('App\User');
+    }
 }
