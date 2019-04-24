@@ -4,7 +4,7 @@
     <a href="/posts" class="btn btn-secondary mb-2">Go Back</a>
     <h1>Create Post</h1>
     <div class="center">
-        <form action="/posts" method="POST" class="form">
+        <form action="/posts" method="POST" class="form" enctype="multipart/form-data">
             @csrf
             <div class="form-group">
                 <label for="title">Enter title</label>
@@ -13,6 +13,10 @@
             <div class="form-group">
                 <label for="article-ckeditor">Enter Body</label>
                 <textarea id="article-ckeditor" class="form-control" type="text" rows="10" name="body" value="{{ old('body') }}"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="cover_image">Choose Image</label>
+                <input id="cover_image" class="form-control-inline" type="file" name="cover_image">
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
